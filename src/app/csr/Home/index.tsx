@@ -21,7 +21,7 @@ const Home: FC<IHomeProps> = ({ lotteries = [] }) => {
     });
 
     return (
-        <main className="bg-white h-screen w-screen flex items-center justify-center">
+        <main className="bg-white min-h-screen w-screen flex items-center justify-center">
             <section
                 id=""
                 className="w-full h-full max-w-[390px] border border-black"
