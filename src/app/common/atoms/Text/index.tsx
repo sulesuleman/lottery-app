@@ -29,6 +29,8 @@ const Text: FC<ITextProps> = ({ id, font, weight, size, lineHeight, color, width
     switch (weight) {
       case '700':
         return 'font-bold';
+      case '400':
+        return 'font-normal';
       case '500':
         return 'font-medium';
       case '600':
@@ -50,6 +52,8 @@ const Text: FC<ITextProps> = ({ id, font, weight, size, lineHeight, color, width
         return 'text-[20px]'
       case '15':
         return 'text-[15px]'
+      case '16':
+        return 'text-[16px]'
       case '14':
         return 'text-[14px]'
       case '13':
@@ -65,10 +69,14 @@ const Text: FC<ITextProps> = ({ id, font, weight, size, lineHeight, color, width
         return 'leading-[29.23px]';
       case '26.63':
         return 'leading-[26.63px]';
+      case '17.05':
+        return 'leading-[17.05px]';
       case '15.83':
         return 'leading-[15.83px]';
       case '14.62':
         return 'leading-[14.62px]';
+      case '18.62':
+        return 'leading-[18.62px]';
       default:
         return 'leading-3';
     }

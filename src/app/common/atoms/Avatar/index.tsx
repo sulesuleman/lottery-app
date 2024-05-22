@@ -8,10 +8,12 @@ interface IAvatarProps {
     width: number;
     color?: string;
     onClick?: () => void;
+    src?: any;
 }
 
-const Avatar: FC<IAvatarProps> = ({ name, alt, width, height, onClick }) => {
-    return <Image onClick={onClick} src={`/assets/${name}.svg`} alt={alt} width={width} height={height} />
+const Avatar: FC<IAvatarProps> = ({ name, alt, width, height, src, onClick }) => {
+
+    return src ? <div onClick={onClick}>{src}</div> : <Image onClick={onClick} src={`/assets/${name}.svg`} alt={alt} width={width} height={height} />
 }
 
 
