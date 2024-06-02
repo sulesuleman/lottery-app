@@ -12,9 +12,9 @@ const MinifiedView = ({ previousWinningTicket, winningPot }: IMinifiedViewProps)
         <>
             <div className="flex gap-x-2 px-3">
                 {previousWinningTicket.map(
-                    (winningTicket: number) => (
+                    (winningTicket: number, index: number) => (
                         <Circle
-                            key={winningTicket}
+                            key={`${winningTicket} - ${index}`}
                             ticketNumber={winningTicket}
                         />
                     )

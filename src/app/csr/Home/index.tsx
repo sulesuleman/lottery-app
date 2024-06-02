@@ -1,38 +1,24 @@
 "use client";
 
+import React, { FC } from "react";
 import { Avatar } from "@/app/common/atoms";
 import Text from "@/app/common/atoms/Text";
 import Card from "@/app/common/molecules/Card";
 import { getThemeColorByLotteryName } from "@/app/utils/helpers";
-import React, { FC, useEffect, useState } from "react";
 import MinifiedView from "./components/MinifiedView";
 import MagnifiedView from "./components/MagnifiedView";
 import MagnifierPlusIcon from '@/app/svgs/magnifier-plus';
 import MagnifierMinusIcon from '@/app/svgs/maginifier-minus';
-import { useRouter } from "next/navigation";
+import useHome from "./hooks/useHome";
 interface IHomeProps {
     lotteries: Array<any>;
 }
 
 const Home: FC<IHomeProps> = ({ lotteries = [] }) => {
-    const router = useRouter();
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [magnifiedLottery, setMagnifiedLottery] = useState({
-        cosmic: false,
-        classic: false,
-        automic: false,
-    });
-    const [expanded, setExpanded] = useState({
-        cosmic: false,
-        classic: false,
-        automic: false,
-    });
 
-    useEffect(() => {
-        if (localStorage && localStorage.getItem('authenticated') === 'true') {
-            setIsAuthenticated(true);
-        } else setIsAuthenticated(true);
-    }, [])
+    console.info({ lotteries })
+
+    const { expanded, isAuthenticated, magnifiedLottery, router, setExpanded, setMagnifiedLottery } = useHome();
 
     return (
         <main className="bg-white min-h-screen w-screen flex items-center justify-center">
