@@ -7,7 +7,7 @@ async function fetchLotteries () {
             fetch(getLottery('CLASSIC')),
             fetch(getLottery('ATOMIC')),
         ]);
-        const data = await Promise.any(results.map(result => result.json()))
+        const data = await Promise.all(results.map(result => result.json()))
         return data;
     } catch(error: any) {
         console.error('Failed to resolve Promise', error);
