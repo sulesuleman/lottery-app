@@ -16,8 +16,6 @@ interface IHomeProps {
 
 const Home: FC<IHomeProps> = ({ lotteries = [] }) => {
 
-    console.info({ lotteries })
-
     const { expanded, isAuthenticated, magnifiedLottery, router, setExpanded, setMagnifiedLottery } = useHome();
 
     return (
